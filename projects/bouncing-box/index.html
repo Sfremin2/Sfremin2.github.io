@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bouncing Box</title>
+	<link rel="icon" href="http://www.iconarchive.com/download/i97724/danieledesantis/playstation-flat/playstation-square-black-and-white.ico">
+	<script src="jquery.min.js"></script>
+
+<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+	<!-- BEGIN CSS -->
+	<style>
+		[class="board"] {
+			background: linear-gradient(210deg, rgb(255, 0, 0), rgb(0, 0, 255));
+		}
+		/* TODO 1 */
+		[class="box"] {
+			display: block;
+			position: absolute;
+			width: 70px;
+			height: 70px;
+			top: 0px;
+			left: 0px;
+			background: linear-gradient(210deg, rgb(255, 255, 255), rgb(0, 0, 0));
+			font-size: 300%;
+			color: aquamarine;
+			text-align: center;
+		}
+		[class="obstacle"] {
+			display: block;
+			position: absolute;
+			width: 70px;
+			height: 70px;
+			top: 0px;
+			right: 0px;
+			background: linear-gradient(210deg, rgb(255, 255, 0), rgb(255, 0, 0));
+			font-size: 300%;
+			color: aquamarine;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body class="board">
+	<div class="obstacle"></div>
+	<!-- HTML for the box -->
+	<div class="box">?</div>
+		
+	<!-- BEGIN JAVASCRIPT -->
+	<script>
+		(function(){
+			'use strict'
+			/* global &*/
+
+			// Variable declarations
+			var box;
+			var obstacle;
+			var boardWidth;
+			var update;
+			var updateObstacle;
+			var handleBoxClick;
+			var handleObstacleClick;
+			var widthBox;
+			var heightBox;
+			var widthObstacle;
+			var heightObstacle;
+			// var box
+			var direction;
+				direction = 1;
+			var directionObstacle;
+				directionObstacle = 1;
+			// jQuery stuff setup for you
+			box = $('.box');
+			obstacle = $('.obstacle');
+			boardWidth = $('.board').width();
+			var boardHeight = $(window).height();
+
+			// TODO 2
+			var position;
+			var positionObstacle;
+			var points;
+			var speed;
+			var speedObstacle;
+			
+			position = 0;
+			positionObstacle = 0;
+			points = 0;
+			speed = 10;
+			speedObstacle = 15;
+			
+			//box.css('top', position);//changes the 'left' css property of the box to value of var position
+			box.css('left', position);
+			obstacle.css('right', positionObstacle);
+			box.css('width', widthBox);
+			box.css('height', heightBox);
+			obstacle.css('width', widthObstacle);
+			obstacle.css('height', heightObstacle);
+			box.text(points);				//changes the value of the box to display the value of var points
+			// TODO 3 / 6 / 7 / 8
+			function update() {
+				position = position + (speed * direction);
+				//box.css('top', position);
+				box.css('left', position);
+				box.text(points);
+				if(position > boardWidth) {
+					direction = -1;
+				}
+				if(position < 0) {
+					direction = 1;
+				}
+			};
+			function updateObstacle() {
+				console.log("hi");
+				positionObstacle = positionObstacle + (speedObstacle * directionObstacle);
+				obstacle.css('right', positionObstacle);
+				if(positionObstacle > boardWidth) {
+					directionObstacle = -1;
+				}
+				if(positionObstacle < 0) {
+					directionObstacle = 1;
+				}
+			}
+
+
+			// TODO 4 / 5
+			function handleBoxClick() {
+				speed = speed + 3;
+				position = 0;
+				points = points + 1;
+				heightBox = heightBox - 10;
+				widthBox = widthBox - 10;
+				
+			};
+			function handleObstacleClick() {
+				speed = 10;
+				position = 0;
+				points = 0;
+				speedObstacle = 10;
+				positionObstacle = 0;
+			}
+			
+
+
+			//this calls update every 50 milliseconds
+			setInterval(update, 50);
+			setInterval(updateObstacle, 50);
+			// this calls the handle handleBoxClick function every time the box is clicked on
+			box.on('click', handleBoxClick);
+			obstacle.on('click', handleObstacleClick);
+		})();
+		
+	</script>
+</body>
+</html>

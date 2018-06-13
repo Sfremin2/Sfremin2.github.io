@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sfremin2's Website</title>
+        <style>
+            body {
+                background: linear-gradient(132deg, rgb(255, 110, 0), rgb(0, 110, 255));
+                background-size: 400% 400%;
+                animation: BackgroundGradient 13s ease infinite;
+                color: rgb(45, 45, 45);
+                padding: 10px;
+                font-family: arial;
+            }
+            @keyframes BackgroundGradient {
+                0% {background-position: 0% 50%;}
+                50% {background-position: 100% 50%}
+                100% {background-position: 0% 50%;}
+            }
+            header {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+            
+            /* navigation menu */
+            nav {
+                background: linear-gradient(132deg, rgb(255, 110, 0), rgb(0, 110, 255));
+                margin: 0 auto;
+                margin-bottom: 20px;
+                display: flex;
+                padding: 0px 0 0px 10px;
+                border-radius: 15pt;
+            }
+            nav header {
+                display: flex;
+                align-items: center;
+                color: rgb(255, 255, 255);
+                flex: 1;
+                text-shadow: 2px 2px black;
+            }
+            nav ul {
+                list-style-image: none;
+                padding: 0;
+            }
+            nav li {
+                display: inline-block;
+                padding: 0;
+                font-size: 17px;
+                border-radius: 0 15pt 15pt 0;
+            }
+            nav li:hover {
+                border-radius: 0 15pt 15pt 0;
+            }
+            nav li a {
+                padding: 0px 20px 0px 15px;
+                margin: 0;
+            }
+            #homenav a:hover {
+                padding: 16px 20px 17px 15px;
+                font-size: 17px;
+                color: white;
+                margin: 0;
+                margin-bottom: 20px;
+                background-color: rgb(255, 110, 0);
+            }
+            nav a {
+                text-decoration: none;
+                color: #fff;
+            }
+            #navrad a:hover {
+                background-color: rgb(255, 110, 0);
+                border-radius: 0 15pt 15pt 0;
+                padding: 16px 20px 17px 15px;
+                margin: 0;
+            }
+            .portooltip {
+                position: relative;
+                display: inline-block;
+            }
+            .portooltip #navrad a:hover {
+                background-color: rgb(255, 110, 0);
+                border-radius: 0 15pt 15pt 0;
+                padding: 16px 20px 17px 15px;
+                margin: 0;
+            }
+            .portooltip .portooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                padding: 5px 0;
+                border-radius: 6px;
+                position: absolute;
+                z-index: 1;
+                top: 50px;
+                right: 5px;
+                margin: 0;
+            }
+            .portooltip:hover .portooltiptext {
+                visibility: visible;
+            }
+            /* main container beneath menu */
+            main {
+                background: linear-gradient(-228deg, rgb(255, 110, 0), rgb(0, 110, 255));
+                display: flex;
+                border-radius: 10pt;
+                margin-bottom: 10px;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar img {
+                width: 200px;
+                box-shadow: 4px 4px black;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+                color: white;
+            }
+            #name {
+                font-family: "arial black", Gadget, sans-serif;
+                text-shadow: 2px 2px black;
+            }
+            .content ul {
+                font-family: arial;
+                font-size: 17px;
+            }
+            .interests header {
+                font-size: 1.75em;
+                text-shadow: 2px 2px black;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("ul.professional-interests").toggle();
+                    
+                });
+            });
+        </script>
+        <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/development-2/24/circuit-board-128.png">
+    </head>
+    
+    <body>
+        <div id="all-contents">
+            <nav>
+                <header>Sfremin2's Website</header>
+                <ul>
+                    <li id="homenav"><a href="index.html">Home</a></li>
+                    <li id="navrad">
+                        <a href="portfolio.html">
+                            <div class="portooltip">
+                                Portfolio
+                                <span class="portooltiptext">My projects</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <main>
+                <div class="sidebar">
+                    <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/31444826_10216337166128524_629590081245718356_n.jpg?_nc_cat=0&oh=50f3d4a2379f39df58e848add9a5b983&oe=5BBF4BBA"/>
+                </div>
+                
+                <div class="content">
+                    <header id="name">Shawn Fremin</header>
+                    <p>Student at Fontainebleau Highschool</p>
+                    <section class="interests">
+                        <header>Interests</header>
+                        <ul>
+                            <li>Coding</li>
+                            <li>circuity</li>
+                            <li>Trumpet</li>
+                        </ul>
+                    </section>
+                </div>
+            </main>
+            <main>
+                <div class="content">
+                    <header>Professional Interests</header>
+                    <section class="interests">
+                        <button>Use me to see my professional interests</button>
+                        <ul class="professional-interests">
+                            <li>temp</li>
+                            <li>temp</li>
+                            <li>temp</li>
+                        </ul>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
