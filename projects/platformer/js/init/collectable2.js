@@ -8,9 +8,8 @@
         db: {assetKey: 'db', points: 10},
         max: {assetKey: 'max', points: 20},
         steve: {assetKey: 'steve', points: 30},
-        grace: {assetKey: 'grace', points: 40},
-        kennedi: {assetKey: 'kennedi', points: 50},
-        ben: {assetKey: 'ben', points: 500}
+        grace: {assetKey: 'grace', points: 50},
+        kennedi: {assetKey: 'kennedi', points: 90},
         
     };
     
@@ -38,11 +37,11 @@
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         
         // example: 
-        //collectable.create(type.steve, 200, 170, 1, 0.7); //collectable platform 2
-        //collectable.create(type.max, 250, 450, 1, 0.7);    //collectable
-        //collectable.create(type.kennedi, 50, 600, 0, 0.7);
-        
-        
+        collectable.create(type.max, 85, 230); //collectable platform 2
+        collectable.create(type.db, 660, 425);
+        collectable.create(type.steve, 660, 50);
+        collectable.create(type.grace, 450, 10);
+        collectable.create(type.kennedi, 290, 20);
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     };
