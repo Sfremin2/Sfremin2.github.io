@@ -14,9 +14,3 @@ canvas {
     -ms-user-select: none;
     position:absolute;
 }
-#win {
-    font-family: "lucida console";
-    color: Red;
-    display: inline-block;
-    
-}

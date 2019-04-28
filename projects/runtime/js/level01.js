@@ -43,6 +43,8 @@ var level01 = function (window) {
         damageSound = new sound('/projects/runtime/Sounds/Roblox death sound slomotion earrape (128  kbps).mp3');
         var goodBeansSound;
         goodBeansSound = new sound('/projects/runtime/Sounds/Super Mario Bros.-Coin Sound Effect (128  kbps).mp3');
+        var cartCrashSound;
+        cartCrashSound = new sound('/projects/runtime/Sounds/cart crash.mp3.mp4');
         function sound(src) {
             this.sound = document.createElement("audio");
             this.sound.src = src;
@@ -89,7 +91,7 @@ var level01 = function (window) {
             obstacleImage.x = -70;
             obstacleImage.y = -95;
             myObstacle.onPlayerCollision = function() {
-                damageSound.play();
+                cartCrashSound.play();
                 game.changeIntegrity(-10);
             }
         }
